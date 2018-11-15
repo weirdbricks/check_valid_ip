@@ -1,7 +1,7 @@
 require "socket"
 
 if ARGV.size != 1
-	puts "Usage: You need to provide an IPv4 address"
+	puts "Usage: You need to provide an IP address"
 	puts "#{PROGRAM_NAME} 10.0.0.1"
 	exit 0
 end
@@ -9,7 +9,7 @@ end
 input=ARGV[0]
 
 begin
-	ip_address = Socket::IPAddress.new(input, 8080)
+	ip_address = Socket::IPAddress.new(input, 0)
 rescue
 	puts "FAIL - \"#{input}\" is not a valid IP address"
 	exit 1
